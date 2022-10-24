@@ -1,3 +1,6 @@
+import { Routes, Route } from "react-router-dom";
+import LessonPage from "pages/LessonPage";
+
 export const App = () => {
   return (
     <div
@@ -10,7 +13,10 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+      <Routes>
+        <Route path='lesson/*' element={<LessonPage />} />
+      </Routes>
+
     </div>
   );
 };
