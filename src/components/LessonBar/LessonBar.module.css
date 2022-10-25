@@ -1,7 +1,7 @@
 .navigation {
   padding: 20px;
   width: fit-content;
-  height: 90vh;
+  height: 100%;
   border-right: 1px solid #50a4ff;
 }
 
@@ -47,4 +47,6 @@
 .text {
   margin: 0;
   margin-left: 10px;
+  font-size: 20px;
+  font-weight: 400;
 }

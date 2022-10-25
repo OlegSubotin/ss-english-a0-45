@@ -4,6 +4,7 @@ import AppBar from "components/AppBar";
 import Loader from 'components/Loader';
 import Container from 'components/Container';
 
+const DescriptionPage = lazy(() => import('./pages/DescriptionPage'));
 const HomePage = lazy(() => import('./pages/HomePage'));
 const LessonPage = lazy(() => import('./pages/LessonPage'));
 const VocabularyPage = lazy(() => import('./pages/VocabularyPage'));
@@ -22,6 +23,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/lesson" element={<LessonPage />} >
+            <Route path='' element={<DescriptionPage/>} />
             <Route path="vocabulary" element={<VocabularyPage />} />
             <Route path="grammar" element={<GrammarPage />} />
             <Route path="reading" element={<ReadingPage />} />

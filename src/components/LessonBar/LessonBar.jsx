@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { TbVocabulary } from 'react-icons/tb';
 import { SlNotebook } from 'react-icons/sl';
 import { BsBook } from 'react-icons/bs';
@@ -12,6 +12,7 @@ const LessonBar = () => {
       <nav className={s.navigation}>
         <ul className={s.list}>
           <li className={s.item}>
+          <Link to="*"></Link>
           <NavLink to="vocabulary" className={({ isActive }) => (isActive ? s.active : s.inactive)}>
             <TbVocabulary />
             <p className={s.text}>vocabulary</p> 

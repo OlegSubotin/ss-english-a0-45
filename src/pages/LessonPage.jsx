@@ -11,6 +11,6 @@ const LessonPage = () => {
       <Outlet />
     </LessonPageWrapper>
   )
-}
+};
 
 export default LessonPage

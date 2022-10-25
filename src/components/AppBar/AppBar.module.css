@@ -16,12 +16,14 @@
 }
 
 .active {
-  color: aquamarine;
+  color: white;
   background-color: #50a4ff;
   text-decoration: none;
   padding: 5px 15px;
   border-radius: 10px;
   transition-duration: 0.4s;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .inactive {
@@ -31,6 +33,8 @@
   padding: 5px 15px;
   border-radius: 10px;
   transition-duration: 0.4s;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .inactive:hover {
