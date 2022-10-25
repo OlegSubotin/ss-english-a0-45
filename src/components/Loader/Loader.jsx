@@ -12,7 +12,7 @@ const Loader = () => {
         fontSize: 60,
       }}
     >
-      <ReactLoading type="bars" color="#1F2428" />
+      <ReactLoading type="spinningBubbles" color=" #50A4FF" />
     </div>
   )
 };
