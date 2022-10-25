@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/888.d6a0eb74.chunk.js","mappings":"mJAQA,UANoB,WAClB,OACE,wCAEH,C","sources":["pages/ReadingPage.jsx"],"sourcesContent":["import React from 'react'\n\nconst ReadingPage = () => {\n  return (\n    <div>ReadingPage</div>\n  )\n}\n\nexport default ReadingPage"],"names":[],"sourceRoot":""}
