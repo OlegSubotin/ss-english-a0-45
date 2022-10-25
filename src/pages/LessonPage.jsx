@@ -1,16 +1,15 @@
 import React from 'react';
-import { Routes, Route } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import LessonPageWrapper from "../components/LessonPageWrapper";
 import LessonBar from "../components/LessonBar/";
-import VocabularyPage from './VocabularyPage';
+
 
 const LessonPage = () => {
   return (
-    <div>
+    <LessonPageWrapper>
       <LessonBar />
-      <Routes>
-        <Route path='lesson/vocabulary' element={<VocabularyPage />} />
-      </Routes>
-    </div>
+      <Outlet />
+    </LessonPageWrapper>
   )
 }
 

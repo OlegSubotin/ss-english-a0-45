@@ -1,40 +1,34 @@
 .navigation {
-  padding: 20px;
-  width: fit-content;
-  height: 90vh;
-  border-right: 1px solid #50a4ff;
+  padding: 20px 15px;
+  border-bottom: 1px solid #50a4ff;
 }
 
 .list {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
   list-style: none;
+  justify-content: flex-start;
 }
 
-.list .item:not(:last-child) {
-  margin-bottom: 10px;
+.list .item:first-child {
+  margin-right: 20px;
 }
 
 .active {
-  display: flex;
-  align-items: center;
-  color: #50a4ff;
-  background-color: #eee;
+  color: aquamarine;
+  background-color: #50a4ff;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 5px 15px;
   border-radius: 10px;
   transition-duration: 0.4s;
 }
 
 .inactive {
-  display: flex;
-  align-items: center;
   color: #886478;
   background-color: transparent;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 5px 15px;
   border-radius: 10px;
   transition-duration: 0.4s;
 }
@@ -42,9 +36,4 @@
 .inactive:hover {
   color: #50a4ff;
   background-color: #eee;
-}
-
-.text {
-  margin: 0;
-  margin-left: 10px;
 }
