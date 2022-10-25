@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/468.c81e0b49.chunk.js","mappings":"qJAQA,UANqB,WACnB,OACE,yCAEH,C","sources":["pages/SpeakingPage.jsx"],"sourcesContent":["import React from 'react'\n\nconst SpeakingPage = () => {\n  return (\n    <div>SpeakingPage</div>\n  )\n}\n\nexport default SpeakingPage"],"names":[],"sourceRoot":""}

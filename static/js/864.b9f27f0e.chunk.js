@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkss_english_a0_45=self.webpackChunkss_english_a0_45||[]).push([[864],{3864:function(s,e,n){n.r(e);n(2791);var a=n(184);e.default=function(){return(0,a.jsx)("div",{children:"HomeTaskPage"})}}}]);
+//# sourceMappingURL=864.b9f27f0e.chunk.js.map
