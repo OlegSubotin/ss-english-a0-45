@@ -37,9 +37,9 @@ const LessonBar = () => {
           </NavLink>
           </li>
           <li className={s.item}>
-          <NavLink to="hometask" className={({ isActive }) => (isActive ? s.active : s.inactive)}>
+          <NavLink to="practice" className={({ isActive }) => (isActive ? s.active : s.inactive)}>
             <BiTask/>
-            <p className={s.text}>hometask</p> 
+            <p className={s.text}>practice</p> 
           </NavLink>
           </li>
         </ul>

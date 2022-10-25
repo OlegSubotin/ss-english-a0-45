@@ -28,7 +28,7 @@ export const App = () => {
             <Route path="grammar" element={<GrammarPage />} />
             <Route path="reading" element={<ReadingPage />} />
             <Route path="speaking" element={<SpeakingPage />} />
-            <Route path="hometask" element={<HomeTaskPage />} />
+            <Route path="practice" element={<HomeTaskPage />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
