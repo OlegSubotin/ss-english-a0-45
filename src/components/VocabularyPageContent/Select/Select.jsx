@@ -1,117 +1,139 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";
+import { FcApproval, FcCancel, FcBullish } from "react-icons/fc";
+import {runFireworks} from '../../../lib/confetti';
 import s from "./Select.module.css";
+
 
 const Select = ({ tasks }) => {
   const [questionNumber, setQuestionNumber] = useState(0);
-  const [correctAnswer, setCorrectAnswer] = useState(tasks[0].correct);
-  const [userAnswer, setUserAnswer] = useState('');
-  const [score, setScore] = useState(0);
+  const [correctAnswer, setCorrectAnswer] = useState(tasks[questionNumber].correct);
+  const [showTip, setShowTip] = useState(false);
+  const [showPlus, setShowPlus] = useState(false);
+  const [showMinus, setShowMinus] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
+  useEffect((() => {
+    setCorrectAnswer(tasks[questionNumber].correct)
+  }), [tasks, questionNumber]);
 
   const onNextBtnClick = () => {
-    if (questionNumber < tasks.length-1) {
-      setQuestionNumber(prevQuestionNumber => prevQuestionNumber + 1);
-      setCorrectAnswer(tasks[questionNumber].correct)
+    const inputsEl = document.querySelectorAll("input");
+    inputsEl.forEach(el => el.checked = false);
+
+    if (questionNumber < tasks.length - 1) {
+      setQuestionNumber(questionNumber + 1);
+      setShowPlus(false);
+      setShowMinus(false);
     }
-  }
+  };
   
   const onPreviousBtnClick = () => {
+    const inputsEl = document.querySelectorAll("input");
+    inputsEl.forEach(el => el.checked = false);
     if (questionNumber === 0) {
       return;
     } else {
-      setQuestionNumber(prevQuestionNumber => prevQuestionNumber - 1);
-       setCorrectAnswer(tasks[questionNumber].correct)
+      setQuestionNumber(questionNumber - 1);
+      setShowPlus(false);
+      setShowMinus(false);
     }
-  }
+  };
 
-  const onVariantBtnClick = (e) => {
-    setUserAnswer(e.target.id)
-  }
-
-  const onCheckBtnClick = () => {
-    if (userAnswer.trim() === correctAnswer.trim()) {
-      if (score < tasks.length) {
-        setScore(prevScore => prevScore += 1);
+  const onFormSubmit = e => {
+    e.preventDefault();
+    let userAnswer = e.target.elements.answer.value;
+    if (userAnswer.length === 0) {
+      setShowTip(true);
+    }
+    if (userAnswer.length > 0) {
+      setShowTip(false);
+      if (userAnswer.trim() === correctAnswer.trim()) {
+        setShowPlus(true);
+        setShowMinus(false);
+        if (questionNumber + 1 === tasks.length) {
+          runFireworks();
+          setShowPopup(true);
+        }
+      } else {
+        setShowMinus(true);
+        setShowPlus(false);
       }
     }
-  }
+  };
+
 
   return (
-    <div>
-      <p>Question {questionNumber+1}/{tasks.length}</p>
-      <p>Score {score}/{tasks.length}</p>
-      <div>
-        <ul>
-          <button className={s.navigator} onClick={onPreviousBtnClick}>previous</button>
-        <button className={s.navigator} onClick={onNextBtnClick}>next</button>
-        </ul>
-        <p>{tasks[questionNumber].question}</p>
-        <ul>
-          <li>
-            <button
-              type='button'
-              className={s.variants}
-              onClick={onVariantBtnClick}
-              id={tasks[questionNumber].variant1}
-            >
-              {tasks[questionNumber].variant1}
-            </button>
-          </li>
-          <li>
-            <button
-              type='button'
-              className={s.variants}
-              onClick={onVariantBtnClick}
-              id={tasks[questionNumber].variant2}
-            >
-              {tasks[questionNumber].variant2}
-            </button>
-          </li>
-          <li>
-            <button
-              type='button'
-              className={s.variants}
-              onClick={onVariantBtnClick}
-              id={tasks[questionNumber].variant3}
-            >
-              {tasks[questionNumber].variant3}
-            </button>
-          </li>
-          <li>
-            <button
-              type='button'
-              className={s.variants}
-              onClick={onVariantBtnClick}
-              id={tasks[questionNumber].variant4}
-            >
-              {tasks[questionNumber].variant4}
-            </button>
-          </li>
-        </ul>
-        
-        <button type='button' onClick={onCheckBtnClick}>Check</button>
+    <div className={s.selectWrapper}>
+      <div className={s.headWrapper}>
+        <button
+          className={s.navigator}
+          onClick={() => onPreviousBtnClick()}
+        >
+          <span className={s.icon}><GrFormPreviousLink /></span>
+        </button>
+        <p className={s.description}>Question {questionNumber + 1}/{tasks.length}</p>
+        <button
+          className={s.navigator}
+          onClick={() => onNextBtnClick()}
+        >
+          <span className={s.icon}> <GrFormNextLink /></span>
+        </button>
       </div>
+      <p className={s.questionText}>{tasks[questionNumber].question}</p>
+      <form className={s.form} onChange={() => setShowTip(false)} onSubmit={onFormSubmit}>
+        <label htmlFor={tasks[questionNumber].variant1} className={s.label} >
+          <input
+            name="answer"
+            type="radio"
+            id={tasks[questionNumber].variant1}
+            value={tasks[questionNumber].variant1}
+          />
+          <span className={s.variantText}>{tasks[questionNumber].variant1}</span>
+        </label>
+        <label htmlFor={tasks[questionNumber].variant2} className={s.label} >
+          <input
+            name="answer"
+            type="radio"
+            id={tasks[questionNumber].variant2}
+            value={tasks[questionNumber].variant2}
+          />
+          <span className={s.variantText}>{tasks[questionNumber].variant2}</span>
+        </label>
+        <label htmlFor={tasks[questionNumber].variant3} className={s.label} >
+          <input
+            name="answer"
+            type="radio"
+            id={tasks[questionNumber].variant3}
+            value={tasks[questionNumber].variant3}
+          />
+          <span className={s.variantText}>{tasks[questionNumber].variant3}</span>
+        </label>
+        <label htmlFor={tasks[questionNumber].variant4} className={s.label} >
+          <input
+            name="answer"
+            type="radio"
+            id={tasks[questionNumber].variant4}
+            value={tasks[questionNumber].variant4}
+          />
+          <span className={s.variantText}>{tasks[questionNumber].variant4}</span>
+        </label>
+        <div className={s.submitBtnWrapper}>
+          <button className={s.submitBtn} type='submit' >{showTip ? 'Choose your answer' : 'Check'}
+          </button>
+        </div>
+      </form>
+      {showPlus && <h2 className={s.mark}><FcApproval /></h2>}
+      {showMinus && <h2 className={s.mark}><FcCancel /></h2>}
+      {showPopup &&
+        <div className={s.popup}>
+          <span onClick={() => setShowPopup(false)} className={s.popupCross}>&times;</span>
+          <p className={s.popupText}>Great job!👍 </p>
+          <p className={s.popupIcon}><FcBullish /></p>
+        </div>
+      }
     </div>
-    // <ol>
-    //     {
-    //       tasks.map(({ id, question, variant1, variant2, variant3, variant4, correct }) => (
-    //         <li key={id}>
-    //           <p className='question'>
-    //             {question}
-    //           </p>
-    //           <select name="answers" id='answers' onChange={e => handleSelectChange(e, correct)}>
-    //             <option value=" "> </option>
-    //             <option value={variant1}>{variant1}</option>
-    //             <option value={variant2}>{variant2}</option>
-    //             <option value={variant3}>{variant3}</option>
-    //             <option value={variant4}>{variant4}</option>
-    //           </select>
-    //           <p>result {state.toString()}</p>
-    //         </li>
-    //       ))
-    //     }
-    //   </ol>
-  )
-}
+  );
+};
 
 export default Select

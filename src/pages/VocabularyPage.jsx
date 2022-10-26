@@ -17,7 +17,6 @@ const VocabularyPage = () => {
         <Task accentText="Exercise 2" text="Match the words with the definitions." />
         <Select tasks={DBVocabularySelect} />
       </Section>
-      
     </Container>
   )
 };
