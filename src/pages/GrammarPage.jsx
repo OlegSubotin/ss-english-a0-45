@@ -4,6 +4,8 @@ import Section from 'components/Section';
 import Task from 'components/VocabularyPageContent/Task';
 import GrammarImage from 'components/GrammarPageContent/GrammarImage';
 import Board from 'components/GrammarPageContent/Board';
+import Select from 'components/GrammarPageContent/Select';
+import DBGrammarSelect from '../db/grammarSelect';
 
 const GrammarPage = () => {
   return (
@@ -15,6 +17,13 @@ const GrammarPage = () => {
         />
         <GrammarImage />
         <Board/>
+      </Section>
+      <Section>
+        <Task
+          accentText="Exercise 1"
+          text="Choose correct option"
+        />
+        <Select tasks={DBGrammarSelect} />
       </Section>
     </Container>
   )

@@ -67,7 +67,6 @@ const Select = ({ tasks }) => {
     setShowPopup(false);
   }
 
-
   return (
     <div className={s.selectWrapper}>
       <div className={s.headWrapper}>
@@ -85,47 +84,58 @@ const Select = ({ tasks }) => {
           <span className={s.icon}> <GrFormNextLink /></span>
         </button>
       </div>
+      <p className={s.questionText}>{tasks[questionNumber].translate}</p>
       <p className={s.questionText}>{tasks[questionNumber].question}</p>
       <form className={s.form} onChange={() => setShowTip(false)} onSubmit={onFormSubmit}>
-        <label htmlFor={tasks[questionNumber].variant1} className={s.label} >
-          <input
-            name="answer"
-            type="radio"
-            id={tasks[questionNumber].variant1}
-            value={tasks[questionNumber].variant1}
-          />
-          <span className={s.variantText}>{tasks[questionNumber].variant1}</span>
-        </label>
-        <label htmlFor={tasks[questionNumber].variant2} className={s.label} >
-          <input
-            name="answer"
-            type="radio"
-            id={tasks[questionNumber].variant2}
-            value={tasks[questionNumber].variant2}
-          />
-          <span className={s.variantText}>{tasks[questionNumber].variant2}</span>
-        </label>
-        <label htmlFor={tasks[questionNumber].variant3} className={s.label} >
-          <input
-            name="answer"
-            type="radio"
-            id={tasks[questionNumber].variant3}
-            value={tasks[questionNumber].variant3}
-          />
-          <span className={s.variantText}>{tasks[questionNumber].variant3}</span>
-        </label>
-        <label htmlFor={tasks[questionNumber].variant4} className={s.label} >
-          <input
-            name="answer"
-            type="radio"
-            id={tasks[questionNumber].variant4}
-            value={tasks[questionNumber].variant4}
-          />
-          <span className={s.variantText}>{tasks[questionNumber].variant4}</span>
-        </label>
+        <ul className={s.list}>
+          <li>
+            <label htmlFor={tasks[questionNumber].variant1} className={s.label} >
+              <input
+                name="answer"
+                type="radio"
+                id={tasks[questionNumber].variant1}
+                value={tasks[questionNumber].variant1}
+              />
+              <span className={s.variantText}>{tasks[questionNumber].variant1}</span>
+            </label>
+          </li>
+          <li>
+            <label htmlFor={tasks[questionNumber].variant2} className={s.label} >
+              <input
+                name="answer"
+                type="radio"
+                id={tasks[questionNumber].variant2}
+                value={tasks[questionNumber].variant2}
+              />
+              <span className={s.variantText}>{tasks[questionNumber].variant2}</span>
+            </label>
+          </li>
+          <li>
+            <label htmlFor={tasks[questionNumber].variant3} className={s.label} >
+              <input
+                name="answer"
+                type="radio"
+                id={tasks[questionNumber].variant3}
+                value={tasks[questionNumber].variant3}
+              />
+              <span className={s.variantText}>{tasks[questionNumber].variant3}</span>
+            </label>
+          </li>
+          <li>
+            <label htmlFor={tasks[questionNumber].variant4} className={s.label} >
+              <input
+                name="answer"
+                type="radio"
+                id={tasks[questionNumber].variant4}
+                value={tasks[questionNumber].variant4}
+              />
+              <span className={s.variantText}>{tasks[questionNumber].variant4}</span>
+            </label>
+          </li>
+        </ul>
         <div className={s.submitBtnWrapper}>
           <button className={s.submitBtn} type='submit' >
-            <p className={s.btnText}>{showTip ? 'Choose your answer' : 'Check'}</p> 
+            <p className={s.btnText}>{showTip ? 'Choose your answer' : 'Check'}</p>
           </button>
         </div>
       </form>
