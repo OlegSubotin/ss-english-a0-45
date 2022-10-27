@@ -35,7 +35,7 @@
 }
 
 .icon {
-  padding: 3px 10px;
+  padding: 7px 10px 2px;
   line-height: 24px;
   margin: 0;
   font-size: 20px;
@@ -91,22 +91,25 @@ input[type='radio']:checked + span {
 
 .submitBtnWrapper {
   margin-top: 40px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
 }
 
 .submitBtn {
   cursor: pointer;
-  margin: 30px auto;
-  padding: 10px 15px;
-  height: 40px;
-  font-weight: 500;
-  font-size: 20px;
   color: #1f2428;
   border-radius: 10px;
   border: none;
   background-color: #efefef;
   transition-duration: 0.4s;
+}
+
+.btnText {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 15px 20px;
 }
 
 .submitBtn:hover {

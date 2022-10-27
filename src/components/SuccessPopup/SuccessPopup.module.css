@@ -1,6 +1,8 @@
 .popup {
   position: absolute;
   top: 10%;
+  left: 25%;
+  margin: 0 auto;
   width: 400px;
   border-radius: 10px;
   background-color: aquamarine;
@@ -14,7 +16,8 @@
   cursor: pointer;
   color: #1f2428;
   font-size: 50px;
-  padding-right: 12px;
+  padding-top: 10px;
+  padding-right: 10px;
   margin-left: auto;
 }
 

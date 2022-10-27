@@ -124,7 +124,8 @@ const Select = ({ tasks }) => {
           <span className={s.variantText}>{tasks[questionNumber].variant4}</span>
         </label>
         <div className={s.submitBtnWrapper}>
-          <button className={s.submitBtn} type='submit' >{showTip ? 'Choose your answer' : 'Check'}
+          <button className={s.submitBtn} type='submit' >
+            <p className={s.btnText}>{showTip ? 'Choose your answer' : 'Check'}</p> 
           </button>
         </div>
       </form>
