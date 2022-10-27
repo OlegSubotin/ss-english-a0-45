@@ -21,13 +21,13 @@ const DescriptionContent = () => {
         <li className={s.item}>
           <Link to="reading">
             <h4 className={s.title}>Reading block</h4>
-            <p className={s.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, id numquam? Similique dolore accusantium aliquid delectus nam, quas assumenda enim.</p>
+            <p className={s.text}>Poster at work</p>
           </Link>
         </li>
         <li className={s.item}>
           <Link to="speaking">
             <h4 className={s.title}>Speaking block</h4>
-            <p className={s.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, id numquam? Similique dolore acc</p>
+            <p className={s.text}>Meeting people</p>
           </Link>
         </li>
       </ul>
