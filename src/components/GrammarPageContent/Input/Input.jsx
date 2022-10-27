@@ -280,8 +280,6 @@ const Input = ({ tasks }) => {
                 onChange={handleChange}
               />
               &nbsp;
-              {tasks[0].part2}
-              &nbsp;
               {showResult &&
                 (result1
                   ? <span className={s.mark}><FcApproval /></span>
@@ -302,8 +300,6 @@ const Input = ({ tasks }) => {
                 onChange={handleChange}
               />
               &nbsp;
-              {tasks[1].part2}
-              &nbsp;
               {showResult && (result2
                 ? <span className={s.mark}><FcApproval /></span>
                 : <span className={s.mark}><FcCancel /></span>)}
@@ -321,8 +317,6 @@ const Input = ({ tasks }) => {
                 className={s.input}
                 onChange={handleChange}
               />
-              &nbsp;
-              {tasks[2].part2}
               &nbsp;
               {showResult && (result3
                 ? <span className={s.mark}><FcApproval /></span>
@@ -342,8 +336,6 @@ const Input = ({ tasks }) => {
                 onChange={handleChange}
               />
               &nbsp;
-              {tasks[3].part2}
-              &nbsp;
               {showResult && (result4
                 ? <span className={s.mark}><FcApproval /></span>
                 : <span className={s.mark}><FcCancel /></span>)}
@@ -361,8 +353,6 @@ const Input = ({ tasks }) => {
                 className={s.input}
                 onChange={handleChange}
               />
-              &nbsp;
-              {tasks[4].part2}
               &nbsp;
               {showResult && (result5
                 ? <span className={s.mark}><FcApproval /></span>
@@ -382,8 +372,6 @@ const Input = ({ tasks }) => {
                 onChange={handleChange}
               />
               &nbsp;
-              {tasks[5].part2}
-              &nbsp;
               {showResult && (result6
                 ? <span className={s.mark}><FcApproval /></span>
                 : <span className={s.mark}><FcCancel /></span>)}
@@ -401,8 +389,6 @@ const Input = ({ tasks }) => {
                 className={s.input}
                 onChange={handleChange}
               />
-              &nbsp;
-              {tasks[6].part2}
               &nbsp;
               {showResult && (result7
                 ? <span className={s.mark}><FcApproval /></span>
@@ -422,8 +408,6 @@ const Input = ({ tasks }) => {
                 onChange={handleChange}
               />
               &nbsp;
-              {tasks[7].part2}
-              &nbsp;
               {showResult && (result8
                 ? <span className={s.mark}><FcApproval /></span>
                 : <span className={s.mark}><FcCancel /></span>)}
@@ -442,8 +426,6 @@ const Input = ({ tasks }) => {
                 onChange={handleChange}
               />
               &nbsp;
-              {tasks[8].part2}
-              &nbsp;
               {showResult && (result9
                 ? <span className={s.mark}><FcApproval /></span>
                 : <span className={s.mark}><FcCancel /></span>)}
@@ -461,8 +443,6 @@ const Input = ({ tasks }) => {
                 className={s.input}
                 onChange={handleChange}
               />
-              &nbsp;
-              {tasks[9].part2}
               &nbsp;
               {showResult && (result10
                 ? <span className={s.mark}><FcApproval /></span>

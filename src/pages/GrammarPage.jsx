@@ -5,7 +5,9 @@ import Task from 'components/VocabularyPageContent/Task';
 import GrammarImage from 'components/GrammarPageContent/GrammarImage';
 import Board from 'components/GrammarPageContent/Board';
 import Select from 'components/GrammarPageContent/Select';
+import Input from 'components/GrammarPageContent/Input';
 import DBGrammarSelect from '../db/grammarSelect';
+import DBGrammarInput from '../db/grammarInput';
 
 const GrammarPage = () => {
   return (
@@ -24,6 +26,13 @@ const GrammarPage = () => {
           text="Choose correct option"
         />
         <Select tasks={DBGrammarSelect} />
+      </Section>
+      <Section>
+        <Task
+          accentText="Exercise 2"
+          text="Full fill the gaps with correct sentences"
+        />
+        <Input tasks={DBGrammarInput} />
       </Section>
     </Container>
   )
