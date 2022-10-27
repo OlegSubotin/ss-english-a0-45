@@ -119,35 +119,3 @@ input[type='radio']:checked + span {
   right: 5%;
   font-size: 60px;
 }
-
-.popup {
-  position: absolute;
-  top: 10%;
-  width: 400px;
-  border-radius: 10px;
-  background-color: aquamarine;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.popupCross {
-  cursor: pointer;
-  color: #1f2428;
-  font-size: 50px;
-  padding-right: 12px;
-  margin-left: auto;
-}
-
-.popupText {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 24px;
-  color: #1f2428;
-}
-
-.popupIcon {
-  margin: 0 0 24px;
-  font-size: 100px;
-}

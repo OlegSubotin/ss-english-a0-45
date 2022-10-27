@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";
-import { FcApproval, FcCancel, FcBullish } from "react-icons/fc";
-import {runFireworks} from '../../../lib/confetti';
+import { FcApproval, FcCancel } from "react-icons/fc";
+import { runFireworks } from '../../../lib/confetti';
+import SuccessPopup from 'components/SuccessPopup';
 import s from "./Select.module.css";
 
 
@@ -61,6 +62,10 @@ const Select = ({ tasks }) => {
       }
     }
   };
+
+  const onClosePopup = () => {
+    setShowPopup(false);
+  }
 
 
   return (
@@ -125,13 +130,7 @@ const Select = ({ tasks }) => {
       </form>
       {showPlus && <h2 className={s.mark}><FcApproval /></h2>}
       {showMinus && <h2 className={s.mark}><FcCancel /></h2>}
-      {showPopup &&
-        <div className={s.popup}>
-          <span onClick={() => setShowPopup(false)} className={s.popupCross}>&times;</span>
-          <p className={s.popupText}>Great job!👍 </p>
-          <p className={s.popupIcon}><FcBullish /></p>
-        </div>
-      }
+      {showPopup && <SuccessPopup onClosePopup={onClosePopup} />}
     </div>
   );
 };
