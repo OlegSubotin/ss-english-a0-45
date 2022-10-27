@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from 'components/VocabularyPageContent/Container';
-import Section from 'components/VocabularyPageContent/Section';
+import Section from 'components/Section';
 import Input from 'components/VocabularyPageContent/Input';
 import Task from 'components/VocabularyPageContent/Task';
 import WordsImagesList from 'components/VocabularyPageContent/WordsImagesList';

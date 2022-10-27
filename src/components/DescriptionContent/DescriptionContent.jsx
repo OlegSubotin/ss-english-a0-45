@@ -9,13 +9,13 @@ const DescriptionContent = () => {
         <li className={s.item}>
           <Link to='vocabulary'>
             <h4 className={s.title}>Vocabulary block</h4>
-            <p className={s.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, id numquam? Similique dolore accusantium aliquid delectus nam, quas assumenda enim.</p>
+            <p className={s.text}>Vocabulary exercises to help learn words for things you can see in a room (air-condition, carpet, ceiling, door, floor, heating, light, radiator, socket, switch, wall, window).</p>
           </Link>
         </li>
         <li className={s.item}>
           <Link to="grammar">
             <h4 className={s.title}>Grammar block</h4>
-            <p className={s.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, id numquam? Similique dolore accusantium aliquid delectus nam, quas assumenda enim.</p>
+            <p className={s.text}>Past Simple. Verb (to be)</p>
           </Link>
         </li>
         <li className={s.item}>
